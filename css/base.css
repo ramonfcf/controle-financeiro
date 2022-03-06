@@ -1,0 +1,18 @@
+@import url(../css/_reset.css);
+
+header {
+    font-family: 'Patrick Hand', sans-serif;
+    background-color: rgba(137, 43, 226, 0.575);
+
+    width: 100%;
+}
+
+main {
+    width: 100%;
+    font-family: 'Patrick Hand', sans-serif;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+}
