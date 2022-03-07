@@ -19,21 +19,63 @@
                 <h1 class="cabecalho__titulo">Controle Financeiro</h1>
                 </a>   
             </div>
-            <div>
+            <nav>
                 <a href="#" class="cabecalho__link">Cadastrar</a>
                 <a href="#" class="cabecalho__link">Consultar</a>
-            </div>
-
+            </nav>
         </div>
-
-        
-
     </header>
 
     <main>
         <section class="principal__container">
             <div>
                 <h2>Entrada de Registro</h2>
+            </div>
+            <div>
+                <select name="formulario-controle" id="ano">
+                    <option value="">Ano</option>
+                    <option value="2021">2021</option>
+                    <option value="2022">2022</option>
+                    <option value="2023">2023</option>
+                </select>
+            </div>
+            <div>
+                <select name="formulario-controle" id="mes">
+                    <option value="">Mês</option>
+                    <option value="1">Janeiro</option>
+                    <option value="2">Fevereiro</option>
+                    <option value="3">Março</option>
+                    <option value="4">Abril</option>
+                    <option value="5">Maio</option>
+                    <option value="6">Junho</option>
+                    <option value="7">Julho</option>
+                    <option value="8">Agosto</option>
+                    <option value="9">Setembro</option>
+                    <option value="10">Outubro</option>
+                    <option value="11">Novembro</option>
+                    <option value="12">Dezembro</option>
+                </select>
+            </div>
+            <div>
+                <div>
+                    <input type="text" class="formulario-controle" placeholder="Dia" id="dia"/>
+                </div>
+            </div>
+            <div>
+                <select name="formulario-controle" id="tipo">
+                    <option>Tipo</option>
+                    <option value="Entrada">Entrada</option>
+                    <option value="Saida">Saída</option>
+                </select>
+            </div>
+            <div>
+                <input type="text" id="valor" placeholder="valor">
+            </div>
+            <div>
+                <input type="text" id="descricao" placeholder="Descrição">
+            </div>
+            <div>
+                <input type="button" value="Adiciona">
             </div>
         </section>
     </main>
