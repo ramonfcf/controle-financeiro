@@ -16,3 +16,9 @@ main {
     display: flex;
     align-items: center;
 }
+
+footer{
+    width: 100%;
+    height: 40px;
+    background-color: rgba(137, 43, 226, 0.575);
+}
