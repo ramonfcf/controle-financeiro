@@ -1,8 +1,19 @@
 .principal__container {
     width: 70%;
-
-    margin: auto;
+    background-color: aquamarine;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
 }
+      
+
+.principal__titulo{
+    font-size: 25px;
+}
+
 
 input, select{
     padding: 4px 6px;
