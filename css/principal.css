@@ -1,7 +1,6 @@
 .principal__container {
     width: 70%;
-    height: 700px;
-    margin: 0 auto;
+    margin: 0 auto 25px auto;
 }
 
 .input__item {
@@ -55,6 +54,22 @@ select{
     width: 300px;
 }
 
+.tabela__container {
+	height: 100%;
+	margin: 0 auto;
+
+    background-color: aquamarine;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+th, td {
+    padding: 4px 50px;
+
+}
 
 footer h2 {
     font-size: 18px;
