@@ -7,9 +7,15 @@ header {
     width: 100%;
 }
 
+body{
+    background-color: rgb(29, 25, 31);
+
+}
+
 main {
     width: 100%;
     font-family: 'Patrick Hand', sans-serif;
+    background-color: rgb(231, 221, 235);
 }
 
 .container {
@@ -21,4 +27,8 @@ footer{
     width: 100%;
     height: 40px;
     background-color: rgba(137, 43, 226, 0.575);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

@@ -25,17 +25,3 @@
     padding-right: 15px;
 }
 
-input {
-    padding: 4px 6px;
-    line-height: 40px;
-
-    font-family: 'Patrick Hand', sans-serif;
-}
-
-select {
-    font-family: 'Patrick Hand', sans-serif;
-
-
-    padding: 4px 6px;
-    line-height: 40px;
-}
