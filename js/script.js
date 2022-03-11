@@ -41,6 +41,24 @@ class BancoDados {
 
         localStorage.setItem('id', id)
     }
+
+    recuperarTodosRegistros() {
+
+        let registros = [];
+
+        let id =localStorage.getItem('id')
+        
+        for(let i = 1; i <= id; i++){
+            let registro = JSON.parse(localStorage.getItem(i));
+
+            if(registro == null){
+                continue
+            }
+            registros.push(registro);
+        }
+
+       return registros;
+    }
 }
 
 let bancoDados = new BancoDados()
@@ -72,5 +90,20 @@ function cadastrarRegistro() {
 }
 
 function carregaListaRegistro(){
-    
+
+    let registros = []
+    registros = bancoDados.recuperarTodosRegistros();
+
+    let listaRegistros = document.getElementById('listaRegistros');
+
+    registros.forEach(function(d) {
+        let linha = listaRegistros.insertRow();
+
+        linha.insertCell(0).innerHTML = `${d.dia}/${d.mes}/${d.ano}`;
+        linha.insertCell(1).innerHTML = `${d.tipo}`;
+        linha.insertCell(2).innerHTML = `${d.descricao}`;
+        linha.insertCell(3).innerHTML = `R$${d.valor}`;
+    });
+
+
 }

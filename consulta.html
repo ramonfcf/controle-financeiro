@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-bre">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,7 +13,7 @@
     <script src="js/script.js"></script>
 
 </head>
-<body>
+<body  onload="carregaListaRegistro()">
     <header>
         <div class="cabecalho__container">
             <div>
@@ -47,15 +47,15 @@
                 <div class="input__item">
                     <select class="formulario-controle" id="mes">
                         <option value="">Mês</option>
-                        <option value="1">Janeiro</option>
-                        <option value="2">Fevereiro</option>
-                        <option value="3">Março</option>
-                        <option value="4">Abril</option>
-                        <option value="5">Maio</option>
-                        <option value="6">Junho</option>
-                        <option value="7">Julho</option>
-                        <option value="8">Agosto</option>
-                        <option value="9">Setembro</option>
+                        <option value="01">Janeiro</option>
+                        <option value="02">Fevereiro</option>
+                        <option value="03">Março</option>
+                        <option value="04">Abril</option>
+                        <option value="05">Maio</option>
+                        <option value="06">Junho</option>
+                        <option value="07">Julho</option>
+                        <option value="08">Agosto</option>
+                        <option value="09">Setembro</option>
                         <option value="10">Outubro</option>
                         <option value="11">Novembro</option>
                         <option value="12">Dezembro</option>
@@ -100,7 +100,7 @@
                         <th></th>
                     </tr>
                     </thead>
-                <tbody>
+                <tbody id="listaRegistros">
                 </tbody>
                 </table>
             </div>
