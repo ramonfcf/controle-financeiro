@@ -9,8 +9,10 @@
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/cabecalho.css">
     <link rel="stylesheet" href="css/principal.css">
+
+    <script src="js/script.js"></script>
 </head>
-<body>
+<body onload="carregaListaRegistro()">
     <header>
         <div class="cabecalho__container">
             <div>
@@ -65,7 +67,7 @@
 
                 <div class="input__item">
                     <select class="formulario-controle" id="tipo">
-                        <option>Tipo</option>
+                        <option value="">Tipo</option>
                         <option value="Entrada">Entrada</option>
                         <option value="Saisda">Saída</option>
                     </select>
@@ -79,16 +81,21 @@
                     <input class="formulario-controle" type="text" id="descricao" placeholder="Descrição">
                 </div>
 
-                <divc class="botao__adiciona">
-                    <button class="formulario-controle" type="button" value="Adiciona">Adiciona</button>
-                </divc class="input__item">                
+                <div>
+                    <button class="formulario-controle botao" type="button" value="Adiciona" onclick="cadastrarRegistro()">Adiciona</button>
+                </div>
             </div>
         </section>
+
+
+
         <footer>
             <div>   
                 <h2>&copy; Ramon Costa</h2>
             </div>
         </footer>
+
+
     </main>
 </body>
 </html>
