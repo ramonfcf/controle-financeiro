@@ -1,4 +1,4 @@
-class Despesa {
+class Registro {
 
     constructor(ano, mes, dia, tipo, valor, descricao) {
         this.ano = ano
@@ -59,6 +59,10 @@ class BancoDados {
 
        return registros;
     }
+
+    pesquisar (registro) {
+        console.log(registro);
+    }
 }
 
 let bancoDados = new BancoDados()
@@ -72,7 +76,7 @@ function cadastrarRegistro() {
     let valor = document.getElementById('valor');
     let descricao = document.getElementById('descricao');
 
-    let registro = new Despesa(
+    let registro = new Registro (
         ano.value, 
         mes.value, 
         dia.value, 
@@ -87,6 +91,9 @@ function cadastrarRegistro() {
         console.log('dados inválidos')
     }
     bancoDados.gravarLocalStorage(registro);
+
+        let formulario = document.getElementById('formulario');
+        formulario.reset();
 }
 
 function carregaListaRegistro(){
@@ -106,4 +113,17 @@ function carregaListaRegistro(){
     });
 
 
+}
+
+function filtraRegistro(){
+    let ano = document.getElementById('ano').value;
+    let mes = document.getElementById('mes').value;
+    let dia = document.getElementById('dia').value;
+    let tipo = document.getElementById('tipo').value;
+    let valor = document.getElementById('valor').value;
+    let descricao = document.getElementById('descricao').value;
+
+    let registro = new Registro (ano, mes, dia, tipo, valor, descricao);
+
+    bancoDados.pesquisar(registro);
 }
