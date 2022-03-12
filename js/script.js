@@ -61,7 +61,31 @@ class BancoDados {
     }
 
     pesquisar (registro) {
-        console.log(registro);
+       let registrosFiltrados = [];
+       registrosFiltrados = this.recuperarTodosRegistros();
+
+       //Filtrando ano 
+       if(registro.ano != '') {
+         registrosFiltrados = registrosFiltrados.filter(f => f.ano == registro.ano);
+       }
+       //Filtrando mês 
+       if(registro.mes != '') {
+         registrosFiltrados = registrosFiltrados.filter(f => f.mes == registro.mes);
+       }
+       //Filtrando dia 
+       if(registro.dia != '') {
+         registrosFiltrados = registrosFiltrados.filter(f => f.dia == registro.dia);
+       }
+       //Filtrando tipo 
+       if(registro.tipo != '') {
+         registrosFiltrados = registrosFiltrados.filter(f => f.tipo == registro.tipo);
+       }
+       //Filtrando valor 
+       if(registro.valor != '') {
+         registrosFiltrados = registrosFiltrados.filter(f => f.valor == registro.valor);
+       }
+
+       return registrosFiltrados;
     }
 }
 
@@ -111,8 +135,6 @@ function carregaListaRegistro(){
         linha.insertCell(2).innerHTML = `${d.descricao}`;
         linha.insertCell(3).innerHTML = `R$${d.valor}`;
     });
-
-
 }
 
 function filtraRegistro(){
@@ -125,5 +147,20 @@ function filtraRegistro(){
 
     let registro = new Registro (ano, mes, dia, tipo, valor, descricao);
 
-    bancoDados.pesquisar(registro);
+
+    let registros = bancoDados.pesquisar(registro);
+
+    console.log(registros);
+
+    let listaRegistros = document.getElementById('listaRegistros');
+    listaRegistros.innerHTML = '';
+    
+    registros.forEach(function(d) {
+        let linha = listaRegistros.insertRow();
+
+        linha.insertCell(0).innerHTML = `${d.dia}/${d.mes}/${d.ano}`;
+        linha.insertCell(1).innerHTML = `${d.tipo}`;
+        linha.insertCell(2).innerHTML = `${d.descricao}`;
+        linha.insertCell(3).innerHTML = `R$${d.valor}`;
+    });
 }
