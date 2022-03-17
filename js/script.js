@@ -54,6 +54,7 @@ class BancoDados {
             if(registro == null){
                 continue
             }
+            registro.id = i
             registros.push(registro);
         }
 
@@ -87,6 +88,10 @@ class BancoDados {
 
        return registrosFiltrados;
     }
+
+    remover(id){
+		localStorage.removeItem(id)
+	}
 }
 
 let bancoDados = new BancoDados()
@@ -110,9 +115,10 @@ function cadastrarRegistro() {
     )
     
     if(registro.validarDados()){
-        console.log('Dados Válidos')
+        window.alert('Dados cadastrados com sucesso!!')
     } else {
-        console.log('dados inválidos')
+        window.alert('Dados inválidos. Verifique e tente novamente.')
+        return
     }
     bancoDados.gravarLocalStorage(registro);
 
@@ -130,10 +136,24 @@ function carregaListaRegistro(){
     registros.forEach(function(d) {
         let linha = listaRegistros.insertRow();
 
+        console.log(d.id)
+
         linha.insertCell(0).innerHTML = `${d.dia}/${d.mes}/${d.ano}`;
         linha.insertCell(1).innerHTML = `${d.tipo}`;
         linha.insertCell(2).innerHTML = `${d.descricao}`;
         linha.insertCell(3).innerHTML = `R$${d.valor}`;
+
+        let botao = document.createElement("button");
+        botao.className = "botao__excluir";
+        botao.innerHTML = "x";
+        botao.id = `id_registro_${d.id}`;
+        botao.onclick = function(){
+            let id = this.id.replace('id_registro_', '');
+            bancoDados.remover(id);
+            window.location.reload()
+        }
+
+        linha.insertCell(4).append(botao);
     });
 }
 
@@ -162,5 +182,7 @@ function filtraRegistro(){
         linha.insertCell(1).innerHTML = `${d.tipo}`;
         linha.insertCell(2).innerHTML = `${d.descricao}`;
         linha.insertCell(3).innerHTML = `R$${d.valor}`;
-    });
+    
+
+    })
 }
